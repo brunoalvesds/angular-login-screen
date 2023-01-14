@@ -1,0 +1,10 @@
+@import '/src/assets/variables';
+
+input {
+  background-color: $background-secondary;
+  color: $text-primary;
+  padding: 10px;
+  border: 0;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
