@@ -1,1 +1,17 @@
-<p>register works!</p>
+<div class="page-content">
+  <div class="intro">
+   <app-intro-illustration></app-intro-illustration>
+  </div>
+  <div class="register">
+    <div class="register__form">
+      <h1>Register</h1>
+      <div class="register__form__fields">
+        <input type="email" name="E-mail" placeholder="email@example.com">
+        <input type="password" name="password" placeholder="Password">
+        <input type="password" name="repeat" placeholder="Repeat Password">
+        <a href="/register">Have an account already? Sign In <strong>here</strong>!</a>
+        <app-button [text]="'Send'"></app-button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+@import "/src/assets/variables";
+
+.page-content {
+  display: flex;
+  height: 100vh;
+
+  .intro,
+  .register {
+    display: flex;
+    flex-basis: 50%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .intro {
+    background-color: $background-secondary;
+    flex-direction: column;
+  }
+
+  .register {
+    display: flex;
+    justify-content: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: center;
+
+    h1 {
+      margin-bottom: 50px;
+    }
+
+    &__form {
+      &__fields {
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        max-width: 100%;
+      }
+
+      input {
+        background-color: $background-secondary;
+        padding: 10px 25px;
+        border: 0;
+        border-radius: 12px;
+        margin-bottom: 10px;
+      }
+
+      a {
+        font-weight: 500;
+        font-size: 18px;
+        margin-bottom: 50px;
+        opacity: 1;
+        transition: .3s linear;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .page-content {
+    display: flex;
+    flex-direction: column;
+
+    .intro {
+      margin-bottom: 50px;
+      flex-basis: 10%;
+
+      app-intro-illustration {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    .register__form__fields {
+      padding: 0 20px;
+    }
+  }
+}
