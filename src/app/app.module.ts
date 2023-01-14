@@ -9,6 +9,7 @@ import { ContactListComponent } from './pages/contact-list/contact-list.componen
 import { ButtonComponent } from './shared/button/button.component';
 import { InputComponent } from './shared/input/input.component';
 import { CardContactComponent } from './shared/card-contact/card-contact.component';
+import { IntroIllustrationComponent } from './shared/intro-illustration/intro-illustration.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CardContactComponent } from './shared/card-contact/card-contact.compone
     ContactListComponent,
     ButtonComponent,
     InputComponent,
-    CardContactComponent
+    CardContactComponent,
+    IntroIllustrationComponent
   ],
   imports: [
     BrowserModule,
