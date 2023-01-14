@@ -1,0 +1,14 @@
+//Colors
+$background-primary: #EDFCF4;
+$background-secondary: #D9EFEA;
+$text-primary: #1C3733;
+
+//Mixins
+@mixin hoverColorTransition ($colorBefore, $colorAfter){
+  background-color: $colorBefore;
+  transition: all .3s linear;
+
+  &:hover {
+    background-color: $colorAfter;
+  }
+}

@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
-
+  buttonText: string = "";
+  
   constructor() { }
 
   ngOnInit(): void {

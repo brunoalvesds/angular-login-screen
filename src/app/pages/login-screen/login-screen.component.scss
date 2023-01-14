@@ -1,0 +1,9 @@
+@import '/src/assets/variables';
+
+.page-content {
+  display: flex;
+
+  .intro {
+    background-color: $background-secondary;
+  }
+}
