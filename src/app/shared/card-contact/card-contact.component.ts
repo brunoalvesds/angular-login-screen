@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ContactsService } from 'src/app/pages/contact-list/services/contacts.service';
 
 @Component({
   selector: 'app-card-contact',
@@ -8,10 +9,18 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CardContactComponent implements OnInit {
   @Input() data: any;
 
-  constructor() { }
+  constructor(private contactsService: ContactsService) { }
 
   ngOnInit(): void {
-    console.log("recebeu: ", this.data);
+  }
+
+  removeContact(contactId: any) {
+    this.contactsService.deleteContact(contactId).subscribe(
+      response => {
+        console.log("Contact removed.");
+        location.reload();
+      }
+    );
   }
 
 }

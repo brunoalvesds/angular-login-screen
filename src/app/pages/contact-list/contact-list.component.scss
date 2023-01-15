@@ -1,11 +1,20 @@
 @import "/src/assets/variables";
 
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: $background-secondary;
   padding: 20px;
 
   h1 {
     color: $text-primary;
+    margin: 0;
+  }
+
+  button {
+    background-color: $secondary-color;
+    max-width: 100px;
   }
 }
 
@@ -28,4 +37,25 @@ header {
   position: fixed;
   right: 30px;
   bottom: 20px;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+.buttons-area {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  
+  button {
+    background-color: $primary-color;
+    color: white;
+    margin: 0 5px;
+  
+    &.cancel {
+      background-color: $secondary-color;
+    }
+  }
 }

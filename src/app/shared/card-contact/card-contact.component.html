@@ -6,7 +6,7 @@
     <p>{{data.name}}</p>
   </div>
   <div class="column card__mail">
-    <p>{{data.mail}}</p>
+    <p>{{data.email}}</p>
   </div>
   <div class="column card__phone">
     <p>{{data.phone}}</p>
@@ -15,7 +15,7 @@
     <button>
       <img src="../../../assets/images/edit.png" alt="Edit">
     </button>
-    <button>
+    <button (click)="removeContact(data.id)">
       <img src="../../../assets/images/delete.png" alt="Delete">
     </button>
     <button>

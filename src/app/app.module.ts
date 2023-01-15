@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginScreenComponent } from './pages/login-screen/login-screen.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { ContactListComponent } from './pages/contact-list/contact-list.component';
+import { ContactListComponent, CustomDialog } from './pages/contact-list/contact-list.component';
 import { ButtonComponent } from './shared/button/button.component';
 import { InputComponent } from './shared/input/input.component';
 import { CardContactComponent } from './shared/card-contact/card-contact.component';
@@ -24,7 +24,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     ButtonComponent,
     InputComponent,
     CardContactComponent,
-    IntroIllustrationComponent
+    IntroIllustrationComponent,
+    CustomDialog
   ],
   imports: [
     BrowserModule,
