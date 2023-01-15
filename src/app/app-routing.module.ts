@@ -19,7 +19,7 @@ const routes: Routes = [
     component: LoginScreenComponent
   },
   {
-    path: 'contacts',
+    path: 'contacts/:id',
     component: ContactListComponent
   },
 ];

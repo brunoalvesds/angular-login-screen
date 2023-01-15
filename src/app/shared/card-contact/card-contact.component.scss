@@ -9,14 +9,6 @@
   border-radius: 12px;
   margin-bottom: 15px;
 
-  &__name,
-  &__mail,
-  &__phone {
-    flex-basis: calc(30% - 75px);
-    flex-grow: 0;
-    flex-shrink: 0;
-  }
-
   &__picture {
     width: 60px;
     height: 60px;
@@ -24,6 +16,26 @@
     
     img {
       border-radius: 50%;
+    }
+  }
+
+  &__actions {
+    display: flex;
+  }
+
+  .column {
+    flex-basis: calc(30% - 75px);
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  button {
+    background-color: transparent;
+    display: inline-block;
+    margin: 0 5px;
+
+    img {
+      max-width: 25px;
     }
   }
 }

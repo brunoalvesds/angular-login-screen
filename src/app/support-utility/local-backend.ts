@@ -20,9 +20,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 case url.endsWith('/api/authenticate') && method === 'POST':
                     return authenticate();
                 case url.endsWith('/api/contacts') && method === 'GET':
-                  //  if(headers.get('Authorization') === 'Bearer ' + localStorage.getItem('token')) {
-                        return of(new HttpResponse({ status: 200, body: [1, 2, 3] }));
-                  //  }
+                    return of(new HttpResponse({ status: 200, body: [1, 2, 3] }));
                 default:
                     // pass through any requests not handled above
                     return next.handle(request);
@@ -36,32 +34,16 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             let users = [
                 {
                     id : 1,
-                    // contacts: [
-                    //   {
-                    //     "name": "test",
-                    //     "email": "email@example.com",
-                    //     "phone": "123123123"
-                    //   }
-                    // ],
                     email : 'paul@domain.com',
                     password : '1234',
-                    name : 'Paul Alcabasa',
-                    admin : true,
+                    name : 'Paul',
                     token : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiZW1haWwiOiJwYXVsQGRvbWFpbi5jb20iLCJuYW1lIjoiUGF1bCBBbGNhYmFzYSIsImFkbWluIjp0cnVlLCJpYXQiOjE1MTYyMzkwMjJ9.7fcY3KGrcNYleZxhItM61qxccarxd5mvpza31WuHrv8'
                 },
                 {
                     id : 2,
-                    contacts: [
-                      {
-                        "name": "test",
-                        "email": "email@example.com",
-                        "phone": "123123123"
-                      }
-                    ],
-                    email : 'france@domain.com',
+                    email : 'marina@domain.com',
                     password : '1234',
-                    name : 'Francia Clavillas',
-                    admin : false,
+                    name : 'Marina Clavillas',
                     token : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiZW1haWwiOiJmcmFuY2VAZG9tYWluLmNvbSIsIm5hbWUiOiJGcmFuY2lhIENsYXZpbGxhcyIsImFkbWluIjpmYWxzZSwiaWF0IjoxNTE2MjM5MDIyfQ.q1WiKUcZ8vz-7-wPGeHtio2KgbPSvruH4cCql6ECvzA' 
                 },
             ];
@@ -74,7 +56,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 id: user.id,
                 email: user.email,
                 name: user.name,
-                admin : user.admin,
                 token: user.token
             })
         }
@@ -102,6 +83,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             const urlParts = url.split('/');
             return parseInt(urlParts[urlParts.length - 1]);
         }
+
+        
     }
 }
 

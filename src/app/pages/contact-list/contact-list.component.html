@@ -5,13 +5,9 @@
 <div class="page-content">
  <div class="container">
   <ul class="contact-list">
-    <app-card-contact></app-card-contact>
-    <app-card-contact></app-card-contact>
-    <app-card-contact></app-card-contact>
-    <app-card-contact></app-card-contact>
-    <app-card-contact></app-card-contact>
-    <app-card-contact></app-card-contact>
-    <app-card-contact></app-card-contact>
+    <ng-container *ngFor="let item of contactList">
+      <app-card-contact [data]="item"></app-card-contact>
+    </ng-container>
   </ul>
  </div>
 </div>

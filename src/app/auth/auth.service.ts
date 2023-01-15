@@ -21,7 +21,7 @@ export class AuthService {
           let result = response;
           if(result && result.token) {
             localStorage.setItem('token', result.token);
-            return true;
+            return response;
           }
           return false;
         })

@@ -44,6 +44,20 @@
         margin-bottom: 10px;
       }
 
+      button {
+        border: 0;
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 25px 23px;
+        width: 100%;
+        @include hoverColorTransition($primary-color, $secondary-color);
+      }
+
       a {
         font-weight: 500;
         font-size: 18px;

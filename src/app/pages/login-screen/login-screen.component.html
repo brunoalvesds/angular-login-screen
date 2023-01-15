@@ -9,7 +9,7 @@
         <input type="email" name="email" placeholder="email@example.com" [minlength]="3" ngModel>
         <input type="password" name="password" placeholder="Password" [minlength]="3" [maxlength]="8" ngModel>
         <a href="/register">Don't have an account yet? Sign Up <strong>here</strong>!</a>
-        <app-button (click)="signIn(f.value)" [text]="'Login'"></app-button>
+        <button (click)="signIn(f.value)">Login</button>
       </div>
     </form>
   </div>

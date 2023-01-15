@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ContactsService } from './services/contacts.service';
 
 @Component({
   selector: 'app-contact-list',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private contactsService: ContactsService, private route: ActivatedRoute) { }
+
+  contactList: any;
 
   ngOnInit(): void {
+    const userId = this.route.snapshot.paramMap.get('id');
+
+    this.getContacts(userId);
+  }
+
+  getContacts(userId: any) {
+    this.contactsService.getContacts(userId).subscribe(
+      (response: any) => {
+        this.contactList = response.contacts;
+        console.log("List:", this.contactList);
+      },
+      error => {
+        console.log("error list: ", error);
+      }
+    )
   }
 
 }

@@ -24,13 +24,11 @@ export class LoginScreenComponent implements OnInit {
         if(result) {
           console.log("res: ", result);
           let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
-
-          this.router.navigate([returnUrl || '/contacts']);
+          this.router.navigate([returnUrl || '/contacts/' + result.id]);
         } else {
           console.log("ret error");
           this.invalidLogin = true;
         }
-        
       } 
     );
   }
