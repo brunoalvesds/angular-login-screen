@@ -13,6 +13,7 @@ import { IntroIllustrationComponent } from './shared/intro-illustration/intro-il
 import { fakeBackendProvider } from './support-utility/local-backend';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,11 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
+  ],
+  exports: [
+    MatDialogModule
   ],
   providers: [
     fakeBackendProvider
