@@ -8,6 +8,7 @@ import { ContactsService } from 'src/app/pages/contact-list/services/contacts.se
 })
 export class CardContactComponent implements OnInit {
   @Input() data: any;
+  isEditing: boolean = false;
 
   constructor(private contactsService: ContactsService) { }
 
@@ -21,6 +22,26 @@ export class CardContactComponent implements OnInit {
         location.reload();
       }
     );
+  }
+
+  editContact() {
+    this.isEditing = true;
+  }
+
+  saveContact(contactId: any, contactData: any) {
+    if(contactData['name'] == "" || contactData['email'] == "" || contactData['phone'] == "" ) {
+      alert("Invalid data, try again.")
+    } else {
+      this.isEditing = false;
+      
+      this.contactsService.updateContact(contactId, contactData).subscribe(
+        response => {
+          console.log("Contact updated.");
+          this.isEditing = false;
+          location.reload();
+        }
+      );
+    }
   }
 
 }

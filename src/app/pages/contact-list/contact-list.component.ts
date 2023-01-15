@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 import { ContactsService } from './services/contacts.service';
 
 @Component({
@@ -11,7 +12,12 @@ import { ContactsService } from './services/contacts.service';
 
 export class ContactListComponent implements OnInit {
 
-  constructor(private contactsService: ContactsService, private route: ActivatedRoute, public dialog: MatDialog) { }
+  constructor(
+    private contactsService: ContactsService, 
+    private route: ActivatedRoute, 
+    private navigation: Router,
+    public dialog: MatDialog,
+    private authService: AuthService) { }
 
   contactList: any;
 
@@ -31,6 +37,11 @@ export class ContactListComponent implements OnInit {
         console.log("error list: ", error);
       }
     )
+  }
+
+  logout() {
+    this.authService.logout();
+    this.navigation.navigateByUrl('/')
   }
 
   openDialog(): void {
@@ -64,26 +75,29 @@ export class CustomDialog {
     }
 
   addContact(data: any) {
-    const body = {
-      "name": data['name'],
-      "email": data['email'],
-      "phone": data['phone'],
-      "userId": this.userId,
-    }
-
-    this.contactsService.addContact(body).subscribe(
-      res => {
-        console.log("added: ", res);
-        location.reload();
-        this.dialogRef.close();
-
-      },
-      error => {
-        this.dialogRef.close();
-        alert("Error: Cannot add a new contact.")
+    if(data['name'] == "" || data['email'] == "" || data['phone'] == "" ) {
+      alert("Invalid data, try again.")
+    } else {
+      const body = {
+        "name": data['name'],
+        "email": data['email'],
+        "phone": data['phone'],
+        "userId": this.userId,
       }
-    );
-    
+  
+      this.contactsService.addContact(body).subscribe(
+        res => {
+          console.log("added: ", res);
+          location.reload();
+          this.dialogRef.close();
+  
+        },
+        error => {
+          this.dialogRef.close();
+          alert("Error: Cannot add a new contact.")
+        }
+      );
+    }
   }
 
   handleCancel() {

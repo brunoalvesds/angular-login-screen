@@ -1,25 +1,30 @@
 <li class="card">
-  <div class="card__picture">
-    <img src="../../../assets/images/default-profile-pic.jpg" alt="Profile Picture">
-  </div>
-  <div class="column card__name">
-    <p>{{data.name}}</p>
-  </div>
-  <div class="column card__mail">
-    <p>{{data.email}}</p>
-  </div>
-  <div class="column card__phone">
-    <p>{{data.phone}}</p>
-  </div>
-  <div class="column card__actions">
-    <button>
-      <img src="../../../assets/images/edit.png" alt="Edit">
-    </button>
-    <button (click)="removeContact(data.id)">
-      <img src="../../../assets/images/delete.png" alt="Delete">
-    </button>
-    <button>
-      <img src="../../../assets/images/check.png" alt="Check">
-    </button>
-  </div>
+  <form #formData="ngForm">
+    <div class="card__picture">
+      <img src="../../../assets/images/default-profile-pic.jpg" alt="Profile Picture">
+    </div>
+    <div class="column card__name">
+      <p *ngIf="!isEditing">{{data.name}}</p>
+      <input *ngIf="isEditing" type="text" name="name" placeholder="{{data.name}}" [ngModel]="data.name" required>
+    </div>
+    <div class="column card__mail">
+      <p *ngIf="!isEditing">{{data.email}}</p>
+      <input *ngIf="isEditing" type="email" name="email" placeholder="{{data.email}}" [ngModel]="data.email" required>
+    </div>
+    <div class="column card__phone">
+      <p *ngIf="!isEditing">{{data.phone}}</p>
+      <input *ngIf="isEditing" type="text" name="phone" placeholder="{{data.phone}}" [ngModel]="data.phone" required>
+    </div>
+    <div class="column card__actions">
+      <button  *ngIf="isEditing" (click)="saveContact(data.id, formData.value)">
+        <img src="../../../assets/images/check.png" alt="Check">
+      </button>
+      <button *ngIf="!isEditing" (click)="editContact()">
+        <img src="../../../assets/images/edit.png" alt="Edit">
+      </button>
+      <button (click)="removeContact(data.id)">
+        <img src="../../../assets/images/delete.png" alt="Delete">
+      </button>
+    </div>
+  </form>
 </li>

@@ -1,6 +1,6 @@
 <header>
   <h1>Contact List</h1>
-  <button>Logout</button>
+  <button (click)="logout()">Logout</button>
 </header>
 
 <div class="page-content">
@@ -13,4 +13,6 @@
  </div>
 </div>
 
-<button (click)="openDialog()" class="add-contact">+</button>
+<button (click)="openDialog()" class="add-contact">
+  <img src="../../../assets/images/add-user.png" alt="Add user" title="Add user">
+</button>
