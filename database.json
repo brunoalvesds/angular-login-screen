@@ -1,0 +1,67 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "John",
+      "email": "j@j.com",
+      "phone": "21313",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "Will",
+      "email": "will@outlook.com",
+      "phone": "44323 873827",
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "name": "Jake Watterson",
+      "email": "jakewa@outlook.com",
+      "phone": "+1 234 222 1234",
+      "userId": 2
+    },
+    {
+      "id": 4,
+      "name": "Marina Clinton",
+      "email": "marina.c@gmail.com",
+      "phone": "+1 234 535 2233",
+      "userId": 2
+    },
+    {
+      "name": "w",
+      "email": "w",
+      "phone": "w",
+      "userId": null,
+      "id": 7
+    },
+    {
+      "name": "w",
+      "email": "w",
+      "phone": "w",
+      "id": 8
+    },
+    {
+      "name": "a",
+      "email": "a",
+      "phone": "eee",
+      "id": 9
+    },
+    {
+      "name": "rrr",
+      "email": "rrr",
+      "phone": "rrr",
+      "userId": {
+        "id": "1"
+      },
+      "id": 10
+    },
+    {
+      "name": "weewwewe",
+      "email": "jijiji",
+      "phone": "ewewe",
+      "userId": "1",
+      "id": 11
+    }
+  ]
+}
