@@ -22,14 +22,17 @@ export class LoginScreenComponent implements OnInit {
     console.log("cred: ", credentials);
     this.authSevice.login(credentials).subscribe(result => {
         if(result) {
+          console.log("res: ", result);
           let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
 
-          this.router.navigate([returnUrl || '/']);
+          this.router.navigate([returnUrl || '/contacts']);
+        } else {
+          console.log("ret error");
+          this.invalidLogin = true;
         }
-        this.invalidLogin = true;
-      });
-
-      
+        
+      } 
+    );
   }
 
 }

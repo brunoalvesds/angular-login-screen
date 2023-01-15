@@ -36,13 +36,13 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             let users = [
                 {
                     id : 1,
-                    contacts: [
-                      {
-                        "name": "test",
-                        "email": "email@example.com",
-                        "phone": "123123123"
-                      }
-                    ],
+                    // contacts: [
+                    //   {
+                    //     "name": "test",
+                    //     "email": "email@example.com",
+                    //     "phone": "123123123"
+                    //   }
+                    // ],
                     email : 'paul@domain.com',
                     password : '1234',
                     name : 'Paul Alcabasa',

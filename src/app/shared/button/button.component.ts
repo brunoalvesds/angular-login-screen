@@ -15,7 +15,7 @@ export class ButtonComponent implements OnInit {
   }
 
   navigate() {
-    this.router.navigateByUrl('/contacts');
+    // this.router.navigateByUrl('/contacts');
   }
 
 }
