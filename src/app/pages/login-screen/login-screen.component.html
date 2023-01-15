@@ -3,14 +3,14 @@
    <app-intro-illustration></app-intro-illustration>
   </div>
   <div class="login">
-    <div class="login__form">
+    <form class="login__form">
       <h1>Welcome</h1>
       <div class="login__form__fields">
-        <input type="email" name="E-mail" placeholder="email@example.com">
-        <input type="password" name="Password" placeholder="Password">
+        <input type="email" name="E-mail" placeholder="email@example.com" ngModel>
+        <input type="password" name="Password" placeholder="Password" ngModel>
         <a href="/register">Don't have an account yet? Sign Up <strong>here</strong>!</a>
-        <app-button [text]="'Login'"></app-button>
+        <!-- <app-button (click)="signIn(f.value)" [text]="'Login'"></app-button> -->
       </div>
-    </div>
+    </form>
   </div>
 </div>
