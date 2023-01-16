@@ -20,11 +20,16 @@ export class ContactListComponent implements OnInit {
     private authService: AuthService) { }
 
   contactList: any;
+  loading: boolean = true;
 
   ngOnInit(): void {
     const userId = this.route.snapshot.paramMap.get('id');
 
     this.getContacts(userId);
+  }
+
+  ngAfterContentChecked() {
+    this.loading = false;
   }
 
   getContacts(userId: any) {

@@ -16,3 +16,9 @@
 <button (click)="openDialog()" class="add-contact">
   <img src="../../../assets/images/add-user.png" alt="Add user" title="Add user">
 </button>
+
+<div class="loading-mask" *ngIf="loading">
+  <div class="loader">
+    <img src="../../../assets/images/loader.gif" alt="Loading">
+  </div>
+</div>

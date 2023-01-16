@@ -1,6 +1,12 @@
 # AngularLoginSkipp
 
+## Project Author
+Bruno Silva
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
+
+## Backend Server
+Run `json-server` --watch database.json to load the fake backend server.
 
 ## Development server
 
