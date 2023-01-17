@@ -11,6 +11,8 @@ import { ContactsService } from './services/contacts.service';
 })
 
 export class ContactListComponent implements OnInit {
+  contactList: any;
+  loading: boolean = true;
 
   constructor(
     private contactsService: ContactsService, 
@@ -19,12 +21,8 @@ export class ContactListComponent implements OnInit {
     public dialog: MatDialog,
     private authService: AuthService) { }
 
-  contactList: any;
-  loading: boolean = true;
-
   ngOnInit(): void {
     const userId = this.route.snapshot.paramMap.get('id');
-
     this.getContacts(userId);
   }
 
@@ -36,7 +34,6 @@ export class ContactListComponent implements OnInit {
     this.contactsService.getContacts(userId).subscribe(
       (response: any) => {
         this.contactList = response;
-        console.log("List:", this.contactList);
       },
       error => {
         console.log("error list: ", error);
@@ -92,7 +89,6 @@ export class CustomDialog {
   
       this.contactsService.addContact(body).subscribe(
         res => {
-          console.log("added: ", res);
           location.reload();
           this.dialogRef.close();
   

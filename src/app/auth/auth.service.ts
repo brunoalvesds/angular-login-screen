@@ -12,12 +12,10 @@ export class AuthService {
   ) { }
 
   login(credentials: any) {
-    console.log("call login")
     return this.http.post('/api/authenticate', 
       JSON.stringify(credentials))
       .pipe( 
         map( (response: any) => {
-          console.log("resss", response);
           let result = response;
           if(result && result.token) {
             localStorage.setItem('token', result.token);

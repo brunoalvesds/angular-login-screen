@@ -34,7 +34,7 @@ $angular-login-skipp-theme: mat.define-light-theme((
 @include mat.all-component-themes($angular-login-skipp-theme);
 
 /* You can add global styles to this file, and also import other style files */
-@import '/src/assets/variables';
+@import '/src/variables';
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap');
 
 * {

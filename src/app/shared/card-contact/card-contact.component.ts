@@ -18,7 +18,6 @@ export class CardContactComponent implements OnInit {
   removeContact(contactId: any) {
     this.contactsService.deleteContact(contactId).subscribe(
       response => {
-        console.log("Contact removed.");
         location.reload();
       }
     );
@@ -36,7 +35,6 @@ export class CardContactComponent implements OnInit {
       
       this.contactsService.updateContact(contactId, contactData).subscribe(
         response => {
-          console.log("Contact updated.");
           this.isEditing = false;
           location.reload();
         }

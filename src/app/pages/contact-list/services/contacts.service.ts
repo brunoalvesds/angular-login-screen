@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class ContactsService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,) { }
 
   api_uri: string = "http://localhost:3000";
 
