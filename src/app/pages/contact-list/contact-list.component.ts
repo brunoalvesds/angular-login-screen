@@ -82,7 +82,13 @@ export class CustomDialog {
     }
 
   addContact(data: any) {
-    if(data['name'] == "" || data['email'] == "" || data['phone'] == "" ) {
+    var emailRegex = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+    var regexResult = emailRegex.test(data['email']);
+
+    if(regexResult == false) {
+      alert("Invalid e-mail, try again.")
+    }
+    else if(data['name'] == "" || data['email'] == "" || data['phone'] == "") {
       alert("Invalid data, try again.")
     } else {
       const body = {
