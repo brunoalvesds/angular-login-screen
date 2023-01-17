@@ -3,10 +3,14 @@
 ## Project Author
 Bruno Silva
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
 
 ## Backend Server
-Run `json-server` --watch database.json to load the fake backend server.
+API_URL = "https://skipp-json-server.vercel.app" 
+
+or
+
+Run `npm i json-server` and `json-server --watch database.json` to load the fake backend server.
 
 ## User login pre-created database
 User e-mail: paul@domain.com
