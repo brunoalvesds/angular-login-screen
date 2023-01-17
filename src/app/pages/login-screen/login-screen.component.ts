@@ -21,10 +21,8 @@ export class LoginScreenComponent implements OnInit {
   }
 
   signIn(credentials: any) {
-    console.log("cred: ", credentials);
     this.authSevice.login(credentials).subscribe(result => {
         if(result) {
-          console.log("res: ", result);
           let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
           this.router.navigate([returnUrl || '/contacts/' + result.id]);
         } else {

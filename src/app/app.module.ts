@@ -13,7 +13,7 @@ import { IntroIllustrationComponent } from './shared/intro-illustration/intro-il
 import { fakeBackendProvider } from './support-utility/local-backend';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
