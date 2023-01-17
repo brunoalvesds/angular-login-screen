@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_KEY: "https://skipp-json-server.vercel.app/"
+  API_KEY: "https://skipp-json-server.vercel.app"
 };
 
 /*
