@@ -37,6 +37,7 @@ export class ContactListComponent implements OnInit {
       },
       error => {
         console.log("error list: ", error);
+        alert("Something weird just happened on our end, sorry about that. Please refresh your screen and try that again.")
       }
     )
   }

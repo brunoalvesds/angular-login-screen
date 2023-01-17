@@ -16,7 +16,7 @@ Run `npm i json-server` and `json-server --watch database.json` to load the fake
 User e-mail: paul@domain.com
 Password: 1234
 
-User email : 'marina@domain.com'
+User email : marina@domain.com
 Password: 1234
 
 
