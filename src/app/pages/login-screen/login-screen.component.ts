@@ -28,7 +28,7 @@ export class LoginScreenComponent implements OnInit {
         } else {
           this.invalidLogin = true;
           this.dialog.open(CustomDialogLogin, {
-            width: '250px',
+            width: '350px',
           });
         }
       } 

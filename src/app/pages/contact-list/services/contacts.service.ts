@@ -1,14 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactsService {
 
-  constructor(private http: HttpClient,) { }
+  constructor(private http: HttpClient) { }
 
-  api_uri: string = "http://localhost:3000";
+  api_uri: string = environment.API_KEY;
 
   getContacts(userId: any) {
     return this.http.get(`${this.api_uri}/contacts?userId=${userId}`);

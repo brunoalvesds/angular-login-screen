@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
+import {  MatDialog,  MatDialogRef,  MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ContactsService } from './services/contacts.service';
@@ -13,6 +13,7 @@ import { ContactsService } from './services/contacts.service';
 export class ContactListComponent implements OnInit {
   contactList: any;
   loading: boolean = true;
+  userId = this.route.snapshot.paramMap.get('id');
 
   constructor(
     private contactsService: ContactsService, 
@@ -22,8 +23,7 @@ export class ContactListComponent implements OnInit {
     private authService: AuthService) { }
 
   ngOnInit(): void {
-    const userId = this.route.snapshot.paramMap.get('id');
-    this.getContacts(userId);
+    this.getContacts(this.userId);
   }
 
   ngAfterContentChecked() {
@@ -43,7 +43,7 @@ export class ContactListComponent implements OnInit {
 
   logout() {
     this.authService.logout();
-    this.navigation.navigateByUrl('/')
+    this.navigation.navigateByUrl('/login')
   }
 
   openDialog(): void {
@@ -53,6 +53,10 @@ export class ContactListComponent implements OnInit {
         route: this.route
       }
     });
+  }
+
+  async refreshData() {
+    await this.getContacts(this.userId);
   }
 }
 
