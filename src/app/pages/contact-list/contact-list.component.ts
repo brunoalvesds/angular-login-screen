@@ -82,7 +82,7 @@ export class CustomDialog {
     }
 
   addContact(data: any) {
-    var emailRegex = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+    var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     var regexResult = emailRegex.test(data['email']);
 
     if(regexResult == false) {
